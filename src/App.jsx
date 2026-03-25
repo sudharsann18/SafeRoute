@@ -1,18 +1,20 @@
-import MapView from "./components/MapView";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import MapPage from "./pages/MapPage";
 
 function App() {
   return (
-    <div className="bg-black text-white min-h-screen p-4">
-      <h1 className="text-3xl font-bold text-red-500 text-center mb-2">
-  SafeRoute 🚗
-</h1>
+    <Router>
+      <div className="bg-black text-white min-h-screen">
 
-<p className="text-center text-gray-400">
-  Real-Time Accident Prevention & Emergency System
-</p>
+        {/* 🚀 ROUTES ONLY (NO HEADER) */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/map" element={<MapPage />} />
+        </Routes>
 
-      <MapView />
-    </div>
+      </div>
+    </Router>
   );
 }
 
